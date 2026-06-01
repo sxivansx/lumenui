@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency: release-${{ github.ref }}
+
+permissions:
+  contents: write # push the "Version Packages" PR + git tags
+  pull-requests: write # open/update the release PR
+  id-token: write # npm OIDC trusted publishing + provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # Node is used by `changeset publish` to talk to the npm registry.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Create Release PR or Publish
+        uses: changesets/action@v1
+        with:
+          # Bumps versions + writes changelogs, then `bun update` syncs the lockfile.
+          version: bun run version
+          # Builds lumenui, then `changeset publish` (the lib has no internal
+          # workspace deps, so no `workspace:*` rewrite is needed).
+          publish: bun run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Signed provenance. With npm trusted publishing (OIDC) configured for
+          # the package, no NODE_AUTH_TOKEN is required. Otherwise, set a token:
+          # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
