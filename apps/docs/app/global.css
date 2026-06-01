@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Shared design tokens — the same raw token layer the library ships.
+   One Tailwind instance generates utilities for the docs AND the library
+   source (scanned below), so previews look identical with no double preflight. */
+@import "lumenui/theme.css";
+
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+/* Shiki dual-theme: highlighter emits only CSS variables (defaultColor: false),
+   so each theme is applied via the variables with no !important needed. */
+@layer base {
+  .shiki {
+    @apply overflow-x-auto rounded-lg border p-4 text-sm leading-relaxed;
+    background-color: var(--shiki-light-bg);
+  }
+  .shiki span {
+    color: var(--shiki-light);
+  }
+  .dark .shiki {
+    background-color: var(--shiki-dark-bg);
+  }
+  .dark .shiki span {
+    color: var(--shiki-dark);
+  }
+}
