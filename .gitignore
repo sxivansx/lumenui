@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+.next/
+.turbo/
+.source/
+__registry__/
+coverage/
+out/
+
+# misc
+*.tsbuildinfo
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Claude project context (per global convention)
+.claude/

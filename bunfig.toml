@@ -1,0 +1,3 @@
+[install]
+# hoisted layout is the most compatible with Next.js / Turbopack module resolution
+linker = "hoisted"
