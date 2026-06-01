@@ -38,7 +38,7 @@
   },
   "scripts": {
     "build": "tsdown && bun run build:css",
-    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && cp ./src/styles.css ./dist/theme.css",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && cp ./src/tokens.css ./dist/theme.css",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
