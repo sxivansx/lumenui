@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Shared design tokens — the same raw token layer the library ships.
-   One Tailwind instance generates utilities for the docs AND the library
-   source (scanned below), so previews look identical with no double preflight. */
-@import "lumenui/theme.css";
+/* Shared design tokens — import the library's SOURCE token layer directly so
+   the docs CSS never depends on the lib's build output (dist/theme.css is not
+   produced by `tsdown --watch` in dev). One Tailwind instance generates
+   utilities for the docs AND the library source (scanned below). */
+@import "../../../packages/ui/src/tokens.css";
 
 @source "../../../packages/ui/src/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
