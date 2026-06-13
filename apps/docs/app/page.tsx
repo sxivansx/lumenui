@@ -1,44 +1,45 @@
-import { Button } from 'lumenui'
 import Link from 'next/link'
-import { ComponentPreview } from '@/components/component-preview'
+import { ComponentGrid } from '@/components/component-grid'
+import { Hero } from '@/components/hero'
+import { LogoStrip } from '@/components/logo-strip'
+import { getStarCount } from '@/lib/site'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const stars = await getStarCount()
+
   return (
-    <div className="space-y-12">
-      <section className="space-y-4">
-        <h1 className="font-bold text-4xl tracking-tight">lumenui</h1>
-        <p className="text-lg text-muted-foreground">
-          Accessible, themeable React components built on Radix UI and Tailwind CSS v4. Designed for
-          Next.js and any modern React 19 app.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Button asChild>
-            <Link href="/components/button">Browse components</Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="https://www.npmjs.com/package/lumenui" target="_blank" rel="noreferrer">
-              View on npm
-            </a>
-          </Button>
+    // Force dark tokens for the whole landing so library previews render on-brand.
+    <div className="dark min-h-screen bg-black">
+      <Hero stars={stars} />
+      <LogoStrip />
+      <ComponentGrid />
+
+      <section className="bg-black px-6 pb-28">
+        <div className="mx-auto max-w-screen-xl space-y-4">
+          <p className="font-mono text-sm text-white/40">Install</p>
+          <pre className="overflow-x-auto rounded-lg border border-white/10 bg-white/[0.03] p-5 font-mono text-sm text-white/90">
+            <code>bun add lumenui</code>
+          </pre>
+          <p className="text-sm text-white/50">
+            Import the stylesheet once, then use any component.{' '}
+            <Link
+              href="/components/button"
+              className="text-white underline-offset-4 hover:underline"
+            >
+              Read the docs →
+            </Link>
+          </p>
         </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="font-medium text-muted-foreground text-sm uppercase tracking-wider">
-          Install
-        </h2>
-        <pre className="overflow-x-auto rounded-lg border bg-muted/40 p-4 text-sm">
-          <code>bun add lumenui</code>
-        </pre>
-        <p className="text-muted-foreground text-sm">
-          Then import the stylesheet once and use any component.
-        </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="font-semibold text-xl">Example</h2>
-        <ComponentPreview name="button-variants" />
-      </section>
+      <footer className="border-white/10 border-t bg-black px-6 py-10">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-4 sm:flex-row">
+          <span className="font-mono text-sm text-white/40">lumenui · MIT</span>
+          <span className="font-mono text-sm text-white/40">
+            Built on Radix UI + Tailwind CSS v4
+          </span>
+        </div>
+      </footer>
     </div>
   )
 }
