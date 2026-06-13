@@ -23,17 +23,17 @@ export function ComponentPreview({ name }: { name: string }) {
   const Demo = entry.component
 
   return (
-    <div className="my-6 overflow-hidden rounded-xl border">
-      <div className="flex items-center gap-1 border-b bg-muted/40 px-2">
+    <div className="my-6 overflow-hidden rounded-xl border bg-card shadow-stack">
+      <div className="flex items-center gap-1 border-b px-2">
         {TABS.map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
             className={cn(
-              'border-transparent border-b-2 px-3 py-2 text-sm font-medium capitalize transition-colors',
+              'border-transparent border-b-2 px-3 py-2 font-mono text-xs transition-colors',
               tab === t
-                ? 'border-foreground text-foreground'
+                ? 'border-accent-brand text-accent-brand'
                 : 'text-muted-foreground hover:text-foreground',
             )}
           >
@@ -43,7 +43,7 @@ export function ComponentPreview({ name }: { name: string }) {
       </div>
 
       {tab === 'preview' ? (
-        <div className="flex min-h-[220px] items-center justify-center p-10">
+        <div className="flex min-h-[220px] items-center justify-center bg-muted/30 p-10">
           <React.Suspense
             fallback={<span className="text-sm text-muted-foreground">Loading…</span>}
           >
