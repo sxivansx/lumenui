@@ -10,6 +10,73 @@
 @source "../../../packages/ui/src/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
+/* ─── Docs website design layer (Vercel-inspired) ──────────────────────────
+   Scoped to the docs site only — does NOT alter the published library tokens.
+   Geist + Geist Mono are the brand faces; link-blue is the brand link color;
+   the mesh-gradient stops power the single hero accent. */
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* lumenui brand accent. */
+  --color-accent-brand: #2449d1;
+  --color-accent-brand-deep: #1b3aa8;
+  --color-link: #2449d1;
+  --color-link-deep: #1b3aa8;
+
+  /* Brand mesh-gradient stops (hero accent only — never miniaturised). */
+  --gradient-develop-start: #007cf0;
+  --gradient-develop-end: #00dfd8;
+  --gradient-preview-start: #7928ca;
+  --gradient-preview-end: #ff0080;
+  --gradient-ship-start: #ff4d4d;
+  --gradient-ship-end: #f9cb28;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+  /* Geist runs tight; mirror the brand's negative display tracking. */
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.025em;
+  }
+  ::selection {
+    background-color: #171717;
+    color: #f2f2f2;
+  }
+  .dark ::selection {
+    background-color: #f2f2f2;
+    color: #171717;
+  }
+}
+
+@layer components {
+  /* The brand's one decorative element: a multi-stop gradient, used as a text
+     accent at hero scale. No radial glows, never shrunk to an icon. */
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--gradient-develop-start),
+      var(--gradient-preview-start) 40%,
+      var(--gradient-preview-end) 70%,
+      var(--gradient-ship-start)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Stacked, low-opacity elevation — the brand never uses a single heavy drop. */
+  .shadow-stack {
+    box-shadow:
+      0 1px 1px rgb(0 0 0 / 0.02),
+      0 2px 2px rgb(0 0 0 / 0.04),
+      0 8px 16px -8px rgb(0 0 0 / 0.04);
+  }
+}
+
 /* Shiki dual-theme: highlighter emits only CSS variables (defaultColor: false),
    so each theme is applied via the variables with no !important needed. */
 @layer base {
