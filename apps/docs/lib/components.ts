@@ -58,6 +58,18 @@ export const components: ComponentDoc[] = [
     parent: 'button',
   },
   {
+    slug: 'shiny-button',
+    name: 'Shiny Button',
+    description:
+      'A high-impact CTA pill with a conic-gradient streak that rotates around the border, a shimmering dot field, and a glow that rises on hover.',
+    importNames: ['ShinyButton'],
+    examples: [
+      { name: 'shiny-button-demo' },
+      { name: 'shiny-button-variants', title: 'Customization' },
+    ],
+    parent: 'button',
+  },
+  {
     slug: 'badge',
     name: 'Badge',
     description: 'A small label for statuses, counts, or categories.',
