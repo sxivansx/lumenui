@@ -11,6 +11,8 @@ export interface ComponentDoc {
   /** Named exports shown in the import snippet. */
   importNames: string[]
   examples: ComponentExample[]
+  /** Slug of the component this one nests under in the sidebar (e.g. a variant). */
+  parent?: string
 }
 
 export const components: ComponentDoc[] = [
@@ -20,6 +22,17 @@ export const components: ComponentDoc[] = [
     description: 'Trigger an action or event, with multiple variants and sizes.',
     importNames: ['Button'],
     examples: [{ name: 'button-demo' }, { name: 'button-variants', title: 'Variants' }],
+  },
+  {
+    slug: 'liquid-button',
+    name: 'Liquid Button',
+    description: 'A pill button whose label inverts as blobs rise and merge into one liquid mass.',
+    importNames: ['LiquidButton'],
+    examples: [
+      { name: 'liquid-button-demo' },
+      { name: 'liquid-button-variants', title: 'Customization' },
+    ],
+    parent: 'button',
   },
   {
     slug: 'badge',
