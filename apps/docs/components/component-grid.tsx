@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { components } from '@/lib/components'
 
@@ -18,17 +21,25 @@ export function ComponentGrid() {
           </span>
         </div>
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-4">
-          {components.map((c) => (
-            <Link
+          {components.map((c, i) => (
+            <motion.div
               key={c.slug}
-              href={`/components/${c.slug}`}
-              className="group flex min-h-32 flex-col justify-between bg-black p-5 transition-colors hover:bg-white/[0.04]"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: (i % 12) * 0.05 }}
+              viewport={{ once: true }}
+              className="flex flex-col bg-black"
             >
-              <span className="font-mono text-white/30 text-xs transition-colors group-hover:text-white/50">
-                {`{ ${c.name.replace(/\s/g, '')} }`}
-              </span>
-              <span className="font-medium text-base text-white">{c.name}</span>
-            </Link>
+              <Link
+                href={`/components/${c.slug}`}
+                className="group flex min-h-32 flex-1 flex-col justify-between p-5 transition-colors hover:bg-white/[0.04]"
+              >
+                <span className="font-mono text-white/30 text-xs transition-colors group-hover:text-white/50">
+                  {`{ ${c.name.replace(/\s/g, '')} }`}
+                </span>
+                <span className="font-medium text-base text-white">{c.name}</span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

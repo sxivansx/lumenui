@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Moon, Star, Sun } from 'lucide-react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
@@ -87,16 +88,31 @@ export function Hero({ stars }: { stars?: number | null }) {
 
       {/* Hero content */}
       <div className="relative z-10 mx-auto flex max-w-4xl flex-1 flex-col items-center justify-center px-6 py-20 text-center">
-        <h1 className="text-balance font-semibold text-5xl leading-[1.0] tracking-[-0.03em] md:text-6xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-balance font-semibold text-5xl leading-[1.0] tracking-[-0.03em] md:text-6xl"
+        >
           Build stunning
           <br />
           interfaces in minutes
-        </h1>
-        <p className="mt-8 max-w-md text-pretty text-lg text-white/60 leading-relaxed">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 max-w-md text-pretty text-lg text-white/60 leading-relaxed"
+        >
           An accessible, themeable React component library for modern web apps. And it&apos;s all
           yours.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+        >
           <Link
             href="/components/button"
             className="inline-flex h-12 items-center rounded-md bg-accent-brand px-8 font-medium text-sm text-white transition-colors hover:bg-accent-brand-deep md:h-14"
@@ -112,7 +128,7 @@ export function Hero({ stars }: { stars?: number | null }) {
             Star On Github
             <Star className="size-4" />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

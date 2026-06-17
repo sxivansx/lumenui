@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import {
   type SimpleIcon,
   siNextdotjs,
@@ -21,9 +24,13 @@ export function LogoStrip() {
             modern stack
           </span>
         </div>
-        {STACK.map((icon) => (
-          <div
+        {STACK.map((icon, i) => (
+          <motion.div
             key={icon.title}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            viewport={{ once: true }}
             className="flex items-center justify-center border-white/10 border-t px-6 py-8 md:border-t-0"
           >
             <svg
@@ -35,7 +42,7 @@ export function LogoStrip() {
               <title>{icon.title}</title>
               <path d={icon.path} />
             </svg>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
