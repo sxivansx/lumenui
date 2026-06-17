@@ -46,6 +46,18 @@ export const components: ComponentDoc[] = [
     parent: 'button',
   },
   {
+    slug: 'glass-button',
+    name: 'Glass Button',
+    description:
+      'A clean glass-style button with a transparent, frosted surface that blurs whatever sits behind it.',
+    importNames: ['GlassButton'],
+    examples: [
+      { name: 'glass-button-demo' },
+      { name: 'glass-button-variants', title: 'Customization' },
+    ],
+    parent: 'button',
+  },
+  {
     slug: 'badge',
     name: 'Badge',
     description: 'A small label for statuses, counts, or categories.',
