@@ -1,7 +1,7 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
 import { Button } from '@shivansh.life/lumenui'
+import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
