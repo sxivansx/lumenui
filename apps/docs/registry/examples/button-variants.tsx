@@ -1,4 +1,4 @@
-import { Button } from 'lumenui'
+import { Button } from '@shivansh.life/lumenui'
 
 export default function ButtonVariants() {
   return (

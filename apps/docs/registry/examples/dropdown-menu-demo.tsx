@@ -6,7 +6,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from 'lumenui'
+} from '@shivansh.life/lumenui'
 
 export default function DropdownMenuDemo() {
   return (

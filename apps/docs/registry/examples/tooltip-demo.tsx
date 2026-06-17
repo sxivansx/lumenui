@@ -1,4 +1,4 @@
-import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'lumenui'
+import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shivansh.life/lumenui'
 
 export default function TooltipDemo() {
   return (

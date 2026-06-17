@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from 'lumenui'
+} from '@shivansh.life/lumenui'
 
 export default function CardDemo() {
   return (

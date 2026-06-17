@@ -1,7 +1,7 @@
 'use client'
 
 import { Check, Copy } from 'lucide-react'
-import { cn } from 'lumenui'
+import { cn } from '@shivansh.life/lumenui'
 import * as React from 'react'
 
 /** Copies a markdown rendering of the page — mirrors the "Copy Page" affordance. */

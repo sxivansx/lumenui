@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from 'lumenui'
+} from '@shivansh.life/lumenui'
 
 export default function DialogDemo() {
   return (

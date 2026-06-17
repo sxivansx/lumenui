@@ -54,7 +54,7 @@ export default async function ComponentPage({ params }: Params) {
     '## Installation',
     '',
     '```tsx',
-    `import { ${comp.importNames.join(', ')} } from 'lumenui'`,
+    `import { ${comp.importNames.join(', ')} } from '@shivansh.life/lumenui'`,
     '```',
   ].join('\n')
 
@@ -74,7 +74,7 @@ export default async function ComponentPage({ params }: Params) {
         <section id="installation" className="scroll-mt-20 space-y-3">
           <h2 className="font-semibold text-xl tracking-tight">Installation</h2>
           <pre className="overflow-x-auto rounded-lg border bg-card p-4 font-mono text-sm shadow-stack">
-            <code>{`import { ${comp.importNames.join(', ')} } from 'lumenui'`}</code>
+            <code>{`import { ${comp.importNames.join(', ')} } from '@shivansh.life/lumenui'`}</code>
           </pre>
         </section>
 

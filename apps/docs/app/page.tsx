@@ -18,7 +18,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-screen-xl space-y-4">
           <p className="font-mono text-sm text-white/40">Install</p>
           <pre className="overflow-x-auto rounded-lg border border-white/10 bg-white/[0.03] p-5 font-mono text-sm text-white/90">
-            <code>bun add lumenui</code>
+            <code>bun add @shivansh.life/lumenui</code>
           </pre>
           <p className="text-sm text-white/50">
             Import the stylesheet once, then use any component.{' '}

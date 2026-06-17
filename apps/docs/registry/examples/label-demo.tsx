@@ -1,4 +1,4 @@
-import { Input, Label } from 'lumenui'
+import { Input, Label } from '@shivansh.life/lumenui'
 
 export default function LabelDemo() {
   return (

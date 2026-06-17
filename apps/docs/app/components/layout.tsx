@@ -19,7 +19,7 @@ export default function ComponentsLayout({ children }: { children: ReactNode }) 
               GitHub
             </a>
             <a
-              href="https://www.npmjs.com/package/lumenui"
+              href="https://www.npmjs.com/package/@shivansh.life/lumenui"
               target="_blank"
               rel="noreferrer"
               className="rounded-full px-3 py-1.5 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"

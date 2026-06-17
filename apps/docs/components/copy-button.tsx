@@ -1,7 +1,7 @@
 'use client'
 
 import { Check, Copy } from 'lucide-react'
-import { cn } from 'lumenui'
+import { cn } from '@shivansh.life/lumenui'
 import * as React from 'react'
 
 export function CopyButton({ value, className }: { value: string; className?: string }) {

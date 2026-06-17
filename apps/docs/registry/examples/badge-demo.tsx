@@ -1,4 +1,4 @@
-import { Badge } from 'lumenui'
+import { Badge } from '@shivansh.life/lumenui'
 
 export default function BadgeDemo() {
   return (

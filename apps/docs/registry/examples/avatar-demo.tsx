@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from 'lumenui'
+import { Avatar, AvatarFallback, AvatarImage } from '@shivansh.life/lumenui'
 
 export default function AvatarDemo() {
   return (

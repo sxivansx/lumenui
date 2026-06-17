@@ -1,4 +1,4 @@
-import { Separator } from 'lumenui'
+import { Separator } from '@shivansh.life/lumenui'
 
 export default function SeparatorDemo() {
   return (

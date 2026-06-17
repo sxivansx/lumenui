@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from 'lumenui'
+import { cn } from '@shivansh.life/lumenui'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { components } from '@/lib/components'

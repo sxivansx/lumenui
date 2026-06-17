@@ -1,4 +1,4 @@
-import { Button, Popover, PopoverContent, PopoverTrigger } from 'lumenui'
+import { Button, Popover, PopoverContent, PopoverTrigger } from '@shivansh.life/lumenui'
 
 export default function PopoverDemo() {
   return (

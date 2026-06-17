@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'lumenui'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shivansh.life/lumenui'
 
 export default function TabsDemo() {
   return (

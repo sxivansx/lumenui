@@ -1,4 +1,4 @@
-import { Label, Switch } from 'lumenui'
+import { Label, Switch } from '@shivansh.life/lumenui'
 
 export default function SwitchDemo() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from 'lumenui'
+import { cn } from '@shivansh.life/lumenui'
 import * as React from 'react'
 import { Index } from '@/__registry__'
 import { CopyButton } from './copy-button'

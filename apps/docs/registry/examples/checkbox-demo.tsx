@@ -1,4 +1,4 @@
-import { Checkbox, Label } from 'lumenui'
+import { Checkbox, Label } from '@shivansh.life/lumenui'
 
 export default function CheckboxDemo() {
   return (

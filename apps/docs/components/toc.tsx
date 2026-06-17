@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from 'lumenui'
+import { cn } from '@shivansh.life/lumenui'
 import * as React from 'react'
 
 export type TocItem = { id: string; title: string }
