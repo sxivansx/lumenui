@@ -35,6 +35,17 @@ export const components: ComponentDoc[] = [
     parent: 'button',
   },
   {
+    slug: 'magnetic-button',
+    name: 'Magnetic Button',
+    description: 'A button that leans toward the cursor and scales up while the cursor is near.',
+    importNames: ['MagneticButton'],
+    examples: [
+      { name: 'magnetic-button-demo' },
+      { name: 'magnetic-button-variants', title: 'Customization' },
+    ],
+    parent: 'button',
+  },
+  {
     slug: 'badge',
     name: 'Badge',
     description: 'A small label for statuses, counts, or categories.',
