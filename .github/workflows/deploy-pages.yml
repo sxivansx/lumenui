@@ -1,0 +1,59 @@
+name: Deploy docs to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow the GITHUB_TOKEN to deploy to Pages and authenticate the deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One concurrent Pages deploy at a time; don't cancel an in-flight publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # enablement: true lets the workflow turn on Pages (source=GitHub Actions)
+      # on first run, so no manual Settings toggle is required.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Build static export
+        env:
+          GITHUB_PAGES: "true"
+        run: bun run build
+
+      # Fail loudly if the export regressed, rather than publishing a broken site.
+      - name: Verify export output
+        run: test -f apps/docs/out/index.html && test -f apps/docs/out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/docs/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
