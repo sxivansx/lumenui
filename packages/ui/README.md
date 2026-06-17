@@ -5,8 +5,8 @@ Accessible, themeable React UI components built on [Radix UI](https://www.radix-
 ## Install
 
 ```bash
-bun add lumenui
-# or: npm i lumenui / pnpm add lumenui
+bun add @shivansh.life/lumenui
+# or: npm i @shivansh.life/lumenui / pnpm add @shivansh.life/lumenui
 ```
 
 `react` and `react-dom` (`^19`) are peer dependencies.
@@ -16,15 +16,15 @@ bun add lumenui
 Import the precompiled stylesheet once (e.g. in `app/layout.tsx`), then use components anywhere:
 
 ```tsx
-import "lumenui/styles.css";
-import { Button } from "lumenui";
+import "@shivansh.life/lumenui/styles.css";
+import { Button } from "@shivansh.life/lumenui";
 
 export default function Page() {
   return <Button>Click me</Button>;
 }
 ```
 
-No Tailwind setup is required in the consuming app — `lumenui/styles.css` ships precompiled.
+No Tailwind setup is required in the consuming app — `@shivansh.life/lumenui/styles.css` ships precompiled.
 
 ## Theming
 
@@ -45,7 +45,7 @@ If your app uses Tailwind v4 and you'd rather generate utilities yourself (e.g. 
 
 ```css
 @import "tailwindcss";
-@import "lumenui/theme.css";
+@import "@shivansh.life/lumenui/theme.css";
 @source "../node_modules/lumenui/dist/**/*.js";
 ```
 

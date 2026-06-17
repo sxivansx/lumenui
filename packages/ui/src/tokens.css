@@ -4,9 +4,9 @@
  * their own Tailwind v4 pipeline can pull in just the tokens:
  *
  *   @import "tailwindcss";
- *   @import "lumenui/theme.css";   // <- this file (shipped as dist/theme.css)
+ *   @import "@shivansh.life/lumenui/theme.css";   // <- this file (shipped as dist/theme.css)
  *
- * The precompiled `lumenui/styles.css` inlines this for consumers with no Tailwind.
+ * The precompiled `@shivansh.life/lumenui/styles.css` inlines this for consumers with no Tailwind.
  */
 
 /* Tailwind v4 has no `darkMode` config — declare the variant in CSS.

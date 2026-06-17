@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 /* Design tokens, dark variant, and base layer (kept separate so the raw tokens
-   can be shipped as `lumenui/theme.css` for consumers with their own Tailwind). */
+   can be shipped as `@shivansh.life/lumenui/theme.css` for consumers with their own Tailwind). */
 @import "./tokens.css";
 
 /* Scan component sources so the precompiled stylesheet only emits used utilities. */

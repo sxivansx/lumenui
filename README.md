@@ -1,6 +1,6 @@
 # lumenui
 
-A reusable, accessible, themeable React/Next.js UI component library — published to npm as [`lumenui`](https://www.npmjs.com/package/lumenui).
+A reusable, accessible, themeable React/Next.js UI component library — published to npm as [`lumenui`](https://www.npmjs.com/package/@shivansh.life/lumenui).
 
 Built on **Radix UI** primitives and **Tailwind CSS v4**, shipped as ESM with first-class React Server Component support.
 

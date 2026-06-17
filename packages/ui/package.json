@@ -1,5 +1,5 @@
 {
-  "name": "lumenui",
+  "name": "@shivansh.life/lumenui",
   "version": "0.1.0",
   "description": "Accessible, themeable React UI components built on Radix UI and Tailwind CSS v4.",
   "type": "module",
