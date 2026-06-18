@@ -29,6 +29,12 @@ jobs:
           node-version: 22
           registry-url: "https://registry.npmjs.org"
 
+      # Node 22 ships npm 10, but OIDC trusted publishing (exchanging the
+      # GitHub id-token for a publish token) needs npm >= 11.5.1. Without this
+      # the publish PUT is unauthenticated and the registry returns E404.
+      - name: Upgrade npm for OIDC trusted publishing
+        run: npm install -g npm@latest
+
       - name: Install
         run: bun install --frozen-lockfile
 
