@@ -70,6 +70,38 @@ export const components: ComponentDoc[] = [
     parent: 'button',
   },
   {
+    slug: 'arrow-button',
+    name: 'Arrow Button',
+    description:
+      'A pill CTA with a trailing circular badge whose background warms to an accent and whose arrow glides forward on hover.',
+    importNames: ['ArrowButton'],
+    examples: [{ name: 'arrow-button-demo' }],
+    parent: 'button',
+  },
+  {
+    slug: 'gooey-button',
+    name: 'Gooey Button',
+    description:
+      'A two-stage confirm pill that warms to an accent, morphs its label, and oozes a circular action button out of its edge through a gooey filter.',
+    importNames: ['GooeyButton'],
+    examples: [
+      { name: 'gooey-button-demo' },
+      { name: 'gooey-button-variants', title: 'Customization' },
+    ],
+    parent: 'button',
+  },
+  {
+    slug: 'shape-text',
+    name: 'Shape Text',
+    description:
+      'Editorial text that flows around the real contours of transparent images — and reflows live as you drag them across the canvas.',
+    importNames: ['ShapeText'],
+    examples: [
+      { name: 'shape-text-demo' },
+      { name: 'shape-text-variants', title: 'Debug & tuning' },
+    ],
+  },
+  {
     slug: 'badge',
     name: 'Badge',
     description: 'A small label for statuses, counts, or categories.',
@@ -124,6 +156,15 @@ export const components: ComponentDoc[] = [
     description: 'A toggle between two states.',
     importNames: ['Switch'],
     examples: [{ name: 'switch-demo' }],
+  },
+  {
+    slug: 'neumorphic-toggle',
+    name: 'Neumorphic Toggle',
+    description:
+      'A soft, tactile on/off toggle whose grip-textured knob springs out of a recessed groove as the track fills with color.',
+    importNames: ['NeumorphicToggle'],
+    examples: [{ name: 'neumorphic-toggle-demo' }],
+    parent: 'switch',
   },
   {
     slug: 'select',
