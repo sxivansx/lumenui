@@ -4,6 +4,13 @@
   "description": "Accessible, themeable React UI components built on Radix UI and Tailwind CSS v4.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxivansx/lumenui.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/sxivansx/lumenui#readme",
+  "bugs": "https://github.com/sxivansx/lumenui/issues",
   "sideEffects": [
     "**/*.css"
   ],
