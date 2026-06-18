@@ -1,4 +1,5 @@
 import { MagneticButton } from '@shivansh.life/lumenui'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function MagneticButtonVariants() {
   return (
@@ -9,13 +10,20 @@ export default function MagneticButtonVariants() {
       </MagneticButton>
 
       {/* Outline / inverted colors */}
-      <MagneticButton className="border" backgroundColor="#ffffff" textColor="#0a0a0a">
+      <MagneticButton
+        className="shadow-[inset_0_0_0_1px_var(--color-border)]"
+        backgroundColor="#ffffff"
+        textColor="#0a0a0a"
+      >
         Outline
       </MagneticButton>
 
-      {/* Rendered as a link */}
-      <MagneticButton href="#" padding="14px 28px">
-        As a link
+      {/* href renders a real <a> — the arrow marks it as a navigational link */}
+      <MagneticButton href="#">
+        <span className="inline-flex items-center gap-1.5">
+          Read the docs
+          <ArrowUpRight className="size-4" />
+        </span>
       </MagneticButton>
     </div>
   )

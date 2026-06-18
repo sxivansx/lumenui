@@ -1,26 +1,30 @@
 import { GlassButton } from '@shivansh.life/lumenui'
-
-// A single wallpaper so the frosted surface has something to refract.
-const WALLPAPER =
-  'radial-gradient(120% 120% at 15% 10%, #8aa0ff 0%, transparent 45%), radial-gradient(120% 120% at 85% 15%, #3b4fd6 0%, transparent 50%), radial-gradient(140% 130% at 50% 110%, #060a24 0%, transparent 60%), linear-gradient(160deg, #1f2f9e, #0a1030)'
+import { ArrowRight } from 'lucide-react'
 
 export default function GlassButtonVariants() {
   return (
     <div
-      className="relative flex min-h-[260px] w-full flex-wrap items-center justify-center gap-4 overflow-hidden rounded-xl p-10"
-      style={{ background: WALLPAPER }}
+      className="flex min-h-[260px] w-full flex-wrap items-center justify-center gap-4 overflow-hidden rounded-xl bg-cover bg-center p-10"
+      style={{ backgroundImage: "url('/glass-backdrop.jpg')" }}
     >
-      {/* Default frost */}
-      <GlassButton textColor="#ffffff">Continue</GlassButton>
+      {/* Default frost — dark label reads over the light backdrop */}
+      <GlassButton textColor="#2a1408">Continue</GlassButton>
 
       {/* Darker, smoked tint with a stronger blur — same rectangle as the rest */}
       <GlassButton textColor="#ffffff" tint="rgba(10, 12, 20, 0.4)" blur={18}>
         Smoked
       </GlassButton>
 
-      {/* Rendered as a link */}
-      <GlassButton href="#" textColor="#ffffff">
-        As a link
+      {/* href renders a real <a>; on hover the arrow slides out to the right as a
+          fresh arrow slides in from the left, clipped to its own 16px track */}
+      <GlassButton href="#" textColor="#2a1408">
+        <span className="inline-flex items-center gap-1.5">
+          Read the docs
+          <span className="relative inline-flex size-4 overflow-hidden">
+            <ArrowRight className="absolute left-0 top-0 size-4 transition-transform duration-300 ease-out group-hover:translate-x-full motion-reduce:transition-none" />
+            <ArrowRight className="absolute left-0 top-0 size-4 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0 motion-reduce:transition-none" />
+          </span>
+        </span>
       </GlassButton>
     </div>
   )
