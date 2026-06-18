@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ringFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#76808f" />
+      <stop offset="1" stop-color="#334155" />
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#ringFill)"
+    fill-rule="evenodd"
+    d="M8 100a92 92 0 1 0 184 0a92 92 0 1 0-184 0ZM54 100a46 46 0 1 0 92 0a46 46 0 1 0-92 0Z"
+  />
+</svg>
